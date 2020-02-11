@@ -14,7 +14,7 @@ class pizza {
         this.composition = composition;
         this.picture = picture
     }
-} 
+}
 
 let pizzas = []
 
@@ -86,7 +86,7 @@ function makeGrid(){
 
         main.appendChild(pizza)
 
-    }   
+    }
 }
 
 function makeList(){
@@ -101,7 +101,7 @@ function makeList(){
     for(let i=0; i<pizzas.length;i++) {
         let pizza = document.createElement('div')
         pizza.className = "list_item"
-        
+
         let picture = document.createElement('img')
         picture.src = 'https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-pizza-icon-%7C-set-of-great-flat-icons-design-illustration-concept-png-image_854550.jpg';
         picture.setAttribute("width","75px");
@@ -156,7 +156,7 @@ function sortcomponent(){
 
             main.appendChild(pizza)
             console.log(this.value)
-        } 
+        }
     }
 }
 
@@ -166,62 +166,14 @@ function sortname (){
         if(a.name > b.name) { return 1; }
         return 0;
     })
-
-    let main = document.querySelector('main')
-    main.innerText = ""    
-
-    for(let i=0; i<pizzas.length;i++) {
-        let pizza = document.createElement('div')
-        pizza.className = "list_item"
-        
-        let picture = document.createElement('img')
-        picture.src = 'https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-pizza-icon-%7C-set-of-great-flat-icons-design-illustration-concept-png-image_854550.jpg';
-        picture.setAttribute("width","75px");
-        picture.setAttribute("height","75px");
-        pizza.appendChild(picture)
-
-        let name = document.createElement('span');
-        name.className = "span_list"
-        name.innerText = pizzas[i].name
-        pizza.appendChild(name)
-
-        let price = document.createElement('span');
-        price.className = "span_list"
-        price.innerText = pizzas[i].price
-        pizza.appendChild(price)
-
-        main.appendChild(pizza)
-    }
+    
+    makeList()
 }
 
 function sortprice (){
     pizzas.sort((a,b) => parseInt(a.price)-parseInt(b.price) )
 
-    let main = document.querySelector('main')
-    main.innerText = ""    
-
-    for(let i=0; i<pizzas.length;i++) {
-        let pizza = document.createElement('div')
-        pizza.className = "list_item"
-        
-        let picture = document.createElement('img')
-        picture.src = 'https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-pizza-icon-%7C-set-of-great-flat-icons-design-illustration-concept-png-image_854550.jpg';
-        picture.setAttribute("width","75px");
-        picture.setAttribute("height","75px");
-        pizza.appendChild(picture)
-
-        let name = document.createElement('span');
-        name.className = "span_list"
-        name.innerText = pizzas[i].name
-        pizza.appendChild(name)
-
-        let price = document.createElement('span');
-        price.className = "span_list"
-        price.innerText = pizzas[i].price
-        pizza.appendChild(price)
-
-        main.appendChild(pizza)
-    }
+    makeList()
 }
 
 
